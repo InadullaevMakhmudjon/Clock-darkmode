@@ -1,0 +1,33 @@
+.switch {
+    position: absolute;
+    top: 40px;
+    left: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    width: 45px;
+    height: 20px;
+    background: transparent;
+    border: 2px solid white;
+    transition: 0.5s;
+}
+
+.switch.active {
+    border: 2px solid #091921;
+}
+
+.switch:before {
+    content: '';
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    right: 1.5px;
+    width: 14px;
+    height: 14px;
+    background: white;
+    transition: 0.5s;
+}
+
+.switch.active:before {
+    background: #091921;
+    right: 25.5px;
+}
