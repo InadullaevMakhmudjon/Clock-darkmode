@@ -2,26 +2,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style/index.css">
+    <link rel="stylesheet" href="./style/clock.css">
+    <link rel="stylesheet" href="./style/mode.css">
+    <script src="./js/bindings.js"></script>
+    <script src="./js/moment.js"></script>
     <title>Clock</title>
 </head>
-<body>
-        <div class="digital">
-            <span id="time"></span>
-            <span class="second" id="second"></span>
+<body x-data="state" x-bind:class="{'sun':sunMode}">
+    <div class="switch" x-bind:class="{'active': sunMode}" @click="clickEvend"></div>
+    <div class="clock" x-bind:class="{'darkClock':!sunMode,'sunClock':sunMode}">
+        <div class="hour">
+            <div class="hr" id="hr"></div>
         </div>
-        <div class="clock">
-            <div class="hour">
-                <div class="hr" id="hr"></div>
-            </div>
-            <div class="min">
-                <div class="mn" id="mn"></div>
-            </div>
-            <div class="sec">
-                <div class="sc" id="sc"></div>
-            </div>
+        <div class="min">
+            <div class="mn" id="mn"></div>
         </div>
-<script src="./js/moment.js"></script>
+        <div class="sec">
+            <div class="sc" id="sc"></div>
+        </div>
+    </div>
 <script src="./js/index.js"></script>
+<script src="./js/clock.js"></script>
 </body>
 </html>
